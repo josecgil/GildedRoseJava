@@ -5,6 +5,7 @@ import java.util.List;
 
 public class GildedRoseBuilder {
 
+	private static final int DEFAULT_SULFURAS_QUALITY = 80;
 	private static final int NOT_EXPIRED_SELLIN = 50;
 	private static final int EXPIRED_SELLIN = -1;
 	private static final int DEFAULT_QUALITY = 1;
@@ -12,22 +13,22 @@ public class GildedRoseBuilder {
 	private List<Item> items=new ArrayList<Item>();
 	
 	public GildedRoseBuilder withNormalItem() {
-		items.add(new Item("Normal Item", DEFAULT_QUALITY, DEFAULT_SELLIN));
+		items.add(new Item("Normal Item", DEFAULT_SELLIN, DEFAULT_QUALITY));
 		return this;
 	}
 
 	public GildedRoseBuilder withAgedBrie() {
-		items.add(new Item("Aged Brie", DEFAULT_QUALITY, DEFAULT_SELLIN));
+		items.add(new Item("Aged Brie", DEFAULT_SELLIN, DEFAULT_QUALITY));
 		return this;
 	}
 	
 	public GildedRoseBuilder withBackstage() {
-		items.add(new Item("Backstage passes to a TAFKAL80ETC concert", DEFAULT_QUALITY, DEFAULT_SELLIN));
+		items.add(new Item("Backstage passes to a TAFKAL80ETC concert", DEFAULT_SELLIN, DEFAULT_QUALITY));
 		return this;
 	}
 	
 	public GildedRoseBuilder withSulfuras() {
-		items.add(new Item("Sulfuras, Hand of Ragnaros", 50, DEFAULT_SELLIN));
+		items.add(new Item("Sulfuras, Hand of Ragnaros", DEFAULT_SELLIN, DEFAULT_SULFURAS_QUALITY));
 		return this;
 	}
 
