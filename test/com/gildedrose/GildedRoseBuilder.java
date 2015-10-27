@@ -21,8 +21,17 @@ public class GildedRoseBuilder {
 		return this;
 	}
 	
+	public GildedRoseBuilder withBackstage() {
+		items.add(new Item("Backstage passes to a TAFKAL80ETC concert", DEFAULT_QUALITY, DEFAULT_SELLIN));
+		return this;
+	}
+	
+	public GildedRoseBuilder withSulfuras() {
+		items.add(new Item("Sulfuras, Hand of Ragnaros", 50, DEFAULT_SELLIN));
+		return this;
+	}
+
 	private Item getLastItem() {
-		if (items.isEmpty()) return null;
 		return items.get(items.size()-1);
 	}
 
@@ -36,18 +45,18 @@ public class GildedRoseBuilder {
 		return this;
 	}
 
-	public GildedRoseBuilder andQuality(int quality) {
+	public GildedRoseBuilder withQuality(int quality) {
 		this.getLastItem().quality=quality;
 		return this;
 	}
 
-	public GildedRose Build() {
-		return new GildedRose(this.items.toArray(new Item[this.items.size()]));
+	public GildedRoseBuilder withSellin(int sellIn) {
+		this.getLastItem().sellIn=sellIn;
+		return this;
 	}
 
-	public GildedRoseBuilder withBackstage() {
-		items.add(new Item("Backstage passes to a TAFKAL80ETC concert", DEFAULT_QUALITY, DEFAULT_SELLIN));
-		return this;
+	public GildedRose build() {
+		return new GildedRose(this.items.toArray(new Item[this.items.size()]));
 	}
 
 
