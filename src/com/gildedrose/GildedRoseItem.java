@@ -6,20 +6,18 @@ public class GildedRoseItem extends Item {
 		super(item.name, item.sellIn, item.quality);
 	}
 
-	private void decreaseQuality() {
+	protected void decreaseQuality() {
         if (quality <= 0) return; 
         quality--;
     }
 	
-    private void increaseQuality() {
+	protected void increaseQuality() {
         if (quality >= 50) return; 
         quality++;
     }
 
 	public void updateQuality() {
-		if (name.equals("Aged Brie")) {
-			increaseQuality();
-		} else if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+		if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
 			increaseQuality();
 	    } else {
 	        decreaseQuality();
@@ -36,11 +34,7 @@ public class GildedRoseItem extends Item {
 	    
         sellIn--;
 	
-        if (name.equals("Aged Brie")) {
-            if (sellIn < 0) {
-            		increaseQuality();
-            }
-        } else if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+        if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             if (sellIn < 0) {
             		quality = 0;
             }
