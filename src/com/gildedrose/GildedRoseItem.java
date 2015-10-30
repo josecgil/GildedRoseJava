@@ -21,8 +21,6 @@ public class GildedRoseItem extends Item {
 			increaseQuality();
 		} else if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
 			increaseQuality();
-	    } else if (name.equals("Sulfuras, Hand of Ragnaros")) {
-	
 	    } else {
 	        decreaseQuality();
 	    }
@@ -36,11 +34,7 @@ public class GildedRoseItem extends Item {
 	        }
 	    }
 	    
-	    if (name.equals("Sulfuras, Hand of Ragnaros")) {
-	
-	    } else {
-	        sellIn--;
-	    }
+        sellIn--;
 	
         if (name.equals("Aged Brie")) {
             if (sellIn < 0) {
@@ -50,8 +44,6 @@ public class GildedRoseItem extends Item {
             if (sellIn < 0) {
             		quality = 0;
             }
-        } else if (name.equals("Sulfuras, Hand of Ragnaros")) {
-
         } else {
             if (sellIn < 0) {
             		decreaseQuality();
