@@ -17,34 +17,11 @@ public class GildedRoseItem extends Item {
     }
 
 	public void updateQuality() {
-		if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-			increaseQuality();
-	    } else {
-	        decreaseQuality();
-	    }
-	
-	    if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-	        if (sellIn < 11) {
-	    			increaseQuality();
-	        }
-	        if (sellIn < 6) {
-	    			increaseQuality();
-	        }
-	    }
-	    
+        decreaseQuality();
         sellIn--;
-	
-        if (name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            if (sellIn < 0) {
-            		quality = 0;
-            }
-        } else {
-            if (sellIn < 0) {
-            		decreaseQuality();
-            }
+        if (sellIn < 0) {
+        		decreaseQuality();
         }
-
-		
 	}
 
 
