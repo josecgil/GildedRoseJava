@@ -7,12 +7,10 @@ public class Conjured extends NormalItem {
 
 	@Override
 	public void updateQuality() {
-        decreaseQuality();
-        decreaseQuality();
+        decreaseQuality(2);
         sellIn--;
         if (sellIn < 0) {
-        		decreaseQuality();
-            decreaseQuality();
+            decreaseQuality(2);
         }		
 	}
 }

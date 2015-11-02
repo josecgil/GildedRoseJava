@@ -7,10 +7,17 @@ public class NormalItem extends Item {
 	}
 
 	protected void decreaseQuality() {
-        if (quality <= 0) return; 
-        quality--;
+		decreaseQuality(1);
     }
-	
+
+	protected void decreaseQuality(int delta) {
+		if (quality<=0) return;
+		quality=quality-delta;
+		if (quality<0) {
+			quality=0;
+		}
+	}
+
 	protected void increaseQuality() {
         if (quality >= 50) return; 
         quality++;
