@@ -1,8 +1,8 @@
 package com.gildedrose;
 
-public class GildedRoseItemFactory {
+public class ItemFactory {
 	
-	public GildedRoseItem create(Item item) {
+	public NormalItem create(Item item) {
 		if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
 			return new Sulfuras(item);
 		}
@@ -12,7 +12,10 @@ public class GildedRoseItemFactory {
 		if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
 			return new BackstagePasses(item);
 		}
+		if (item.name.equals("Conjured")) {
+			return new Conjured(item);
+		}
 		
-		return new GildedRoseItem(item);
+		return new NormalItem(item);
 	}
 }

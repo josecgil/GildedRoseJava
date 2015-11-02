@@ -160,4 +160,26 @@ public class GildedRoseTest {
         assertEquals(gildedRose.items[0].quality, 41);
     }    
     
+    
+    @Test
+    public void it_decrease_quality_at_double_pace_than_normal_if_is_conjured() {
+		GildedRose gildedRose=new GildedRoseBuilder()
+				.withConjured()
+				.withQuality(10)
+				.build();   	
+        gildedRose.updateQuality();
+        assertEquals(gildedRose.items[0].quality, 8);
+    }    
+
+    @Test
+    public void it_decrease_quality_at_double_pace_than_normal_if_is_an_expired_conjured() {
+		GildedRose gildedRose=new GildedRoseBuilder()
+				.withConjured()
+				.withQuality(10)
+				.expired()
+				.build();   	
+        gildedRose.updateQuality();
+        assertEquals(gildedRose.items[0].quality, 6);
+    }    
+    
 }

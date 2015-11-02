@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class BackstagePasses extends GildedRoseItem {
+public class BackstagePasses extends NormalItem {
 
 	public BackstagePasses(Item item) {
 		super(item);

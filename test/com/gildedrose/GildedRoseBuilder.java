@@ -32,6 +32,11 @@ public class GildedRoseBuilder {
 		return this;
 	}
 
+	public GildedRoseBuilder withConjured() {
+		items.add(new Item("Conjured", DEFAULT_SELLIN, DEFAULT_QUALITY));
+		return this;
+	}
+
 	private Item getLastItem() {
 		return items.get(items.size()-1);
 	}
@@ -59,7 +64,5 @@ public class GildedRoseBuilder {
 	public GildedRose build() {
 		return new GildedRose(this.items.toArray(new Item[this.items.size()]));
 	}
-
-
 
 }
